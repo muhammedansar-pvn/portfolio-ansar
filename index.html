@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ansar — Portfolio</title>
+    <meta
+      name="description"
+      content="Responsive personal portfolio built with Tailwind CSS + vanilla JS"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+
+    <script src="cv.js"></script>
+
+    <style>
+      /* Custom styles */
+      .glass {
+        background: rgba(78, 72, 72, 0.256);
+        backdrop-filter: blur(6px);
+      }
+      .scroll-smooth {
+        scroll-behavior: smooth;
+      }
+
+      /* Light mode */
+      .light {
+        background: rgb(249, 250, 252) !important;
+        color: black !important;
+      }
+      .light .glass {
+        background: rgba(255, 255, 255, 0.7);
+        color: black;
+      }
+      .light header a,
+      .light nav a {
+        color: black !important;
+      }
+      .light button {
+        background: #e2e8f0 !important;
+        color: black !important;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-gradient-to-b from-slate-900 via-slate-800 to-gray-900 text-slate-100 scroll-smooth"
+  >
+    <!-- NAVBAR -->
+    <header class="fixed w-full z-40 top-4 px-4">
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-between p-3 glass rounded-2xl shadow-lg"
+      >
+        <a href="#home" class="flex items-center gap-3">
+          <div>
+            <h1 class="text-sm font-semibold">Muhammed Ansar</h1>
+            <p class="text-xs text-slate-300">  Developer</p>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="#home" class="text-sm hover:text-white">Home</a>
+          <a href="#about" class="text-sm text-slate-300 hover:text-white"
+            >About</a
+          >
+          <a href="#skills" class="text-sm text-slate-300 hover:text-white"
+            >Skills</a
+          >
+          <a href="#contact" class="text-sm text-slate-300 hover:text-white"
+            >Contact</a
+          >
+          <button
+            id="themeBtn"
+            class="ml-2 px-3 py-1 text-sm rounded-lg bg-slate-700/50 hover:bg-slate-700"
+          >
+            Toggle
+          </button>
+        </nav>
+
+        <button id="mobileBtn" class="md:hidden p-2 bg-slate-700/40 rounded-lg">
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <div id="mobileNav" class="fixed inset-0 bg-black/60 hidden z-30">
+      <div
+        class="absolute right-4 top-20 w-64 bg-slate-800/80 glass rounded-xl p-4"
+      >
+        <nav class="flex flex-col gap-3">
+          <a href="#home" class="py-2 px-3 rounded hover:bg-slate-700">Home</a>
+          <a href="#about" class="py-2 px-3 rounded hover:bg-slate-700"
+            >About</a
+          >
+          <a href="#skills" class="py-2 px-3 rounded hover:bg-slate-700"
+            >Skills</a
+          >
+          <a href="#contact" class="py-2 px-3 rounded hover:bg-slate-700"
+            >Contact</a
+          >
+          <button
+            id="themeBtnMobile"
+            class="px-3 py-1 text-sm rounded-lg bg-slate-700/50 hover:bg-slate-700"
+          >
+            Toggle
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <main class="pt-28">
+      <!-- HOME -->
+      <section
+        id="home"
+        class="max-w-6xl mx-auto px-6 py-16 lg:py-28 flex flex-col lg:flex-row items-center gap-12"
+      >
+        <div class="flex-1">
+          <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+            Hi, I'm <span class="text-indigo-400">Muhammed Ansar</span>
+          </h2>
+
+          <div class="mt-6 flex gap-4">
+            <a
+              href="#contact"
+              class="px-5 py-3 mb-6 bg-indigo-500 hover:bg-indigo-600 font-semibold rounded"
+              >Contact Me</a
+            >
+          </div>
+
+          <!-- Social Media -->
+          <div class="flex gap-3 text-2xl mt-2">
+            <a
+              href="https://www.facebook.com/share/14McL2FSMMK/"
+              class="hover:text-indigo-400"
+              ><i class="bx bxl-facebook"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/muhammad-ansar-05b782359?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              class="hover:text-indigo-400"
+              ><i class="bx bxl-linkedin"></i
+            ></a>
+            <a href="https://wa.me/7994050309" class="hover:text-indigo-400"
+              ><i class="bx bxl-whatsapp"></i
+            ></a>
+            <a
+              href="mailto:ansarbinkunhimarakar@gmail.com"
+              class="hover:text-indigo-400"
+              ><i class="bx bxs-envelope"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/ansarmrakkar?igsh=aDNzbDdnNHoyejY4"
+              class="hover:text-indigo-400"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <div>
+          <img
+            src="my.png"
+            alt="Ansar"
+            class="w-80 h-72 object-cover transform hover:scale-110 transition duration-300 rounded-lg shadow-lg  w-32 sm:w-48 md:w-64 lg:w-80 xl:w-96 h-auto" 
+          />
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="max-w-4xl mx-auto px-6 py-12">
+        <div class="glass rounded-2xl p-8">
+          <h3 class="text-2xl font-semibold">About Me</h3>
+          <p class="mt-4 text-slate-300">
+            I am Muhammed Ansar, a dedicated and goal-oriented individual with a
+            strong passion for information technology and software development.
+            I am currently pursuing my career in Software Engineering and
+            working as an intern at Bridgeon, where I am gaining hands-on
+            experience in real-world software projects. I’m driven by curiosity,
+            continuous learning, and a desire to build efficient, user-focused
+            digital solutions that make a positive impact.
+          </p>
+
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ul class="space-y-2">
+              <li>• Strong HTML & CSS</li>
+              <li>• Tailwind CSS & utility-first design</li>
+              <li>• JavaScript (ES6+)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="max-w-4xl mx-auto px-6 py-12">
+        <h3 class="text-2xl font-semibold mb-6">Skills</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-slate-800/60 glass rounded-xl p-6">
+            <h4 class="font-semibold">Frontend</h4>
+            <ul class="mt-4 space-y-2 text-slate-300">
+              <li>HTML / CSS</li>
+              <li>Tailwind CSS</li>
+              <li>JavaScript (ES6+)</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+          <div class="bg-slate-800/60 glass rounded-xl p-6">
+            <h4 class="font-semibold">Tools & Other</h4>
+            <ul class="mt-4 space-y-2 text-slate-300">
+              <li>Git / GitHub</li>
+              <li>VS Code</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="py-10 bg-gray-900">
+        <h2 class="text-3xl font-bold text-center text-white mb-10">
+          Projects
+        </h2>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4"
+        >
+          <!-- Trivago Clone -->
+          <div class="bg-gray-800 p-6 rounded-xl hover:scale-105 transition">
+            <img
+              src="./trivago.png"
+              alt="Trivago Clone"
+              class="rounded-lg mb-3 shadow-md"
+            />
+            <h3 class="text-xl font-semibold text-white">
+              Trivago Clone — Hotel Booking UI
+            </h3>
+            <p class="text-gray-300 mt-1">
+              A front-end clone of Trivago built using HTML, Tailwind CSS, and
+              JavaScript. It replicates the homepage layout, responsive grid,
+              and modern travel search interface.
+            </p>
+            <p class="text-sm text-gray-400 mt-2">Tech: HTML, JavaScript</p>
+          </div>
+
+          <!-- W3Schools Navbar Clone -->
+          <div class="bg-gray-800 p-6 rounded-xl hover:scale-105 transition">
+            <img
+              src="./W3 school.png"
+              alt="W3Schools Navbar Clone"
+              class="rounded-lg mb-3 shadow-md"
+            />
+            <h3 class="text-xl font-semibold text-white">
+              W3Schools Navbar Clone
+            </h3>
+            <p class="text-gray-300 mt-1">
+              A clone of the W3Schools navigation bar made with pure HTML, CSS,
+              and JavaScript. Fully responsive with hover animations and
+              dropdown menus.
+            </p>
+            <p class="text-sm text-gray-400 mt-2">
+              Tech: HTML, Tailwind CSS, JavaScript
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="max-w-3xl mx-auto px-6 py-12">
+        <div class="bg-slate-800/60 glass rounded-2xl p-8">
+          <h3 class="text-2xl font-semibold">Contact Me</h3>
+          <p class="mt-2 text-slate-300">
+            Want to collaborate or hire me? Send a message — I'll reply soon.
+          </p>
+          <form id="contactForm" class="mt-6 grid grid-cols-1 gap-4">
+            <input
+              name="name"
+              required
+              placeholder="Your name"
+              class="p-3 rounded bg-slate-900/60"
+            />
+            <input
+              name="email"
+              type="email"
+              required
+              placeholder="Your email"
+              class="p-3 rounded bg-slate-900/60"
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Message"
+              class="p-3 rounded bg-slate-900/60"
+            ></textarea>
+            <div class="flex items-center gap-3">
+              <button
+                type="submit"
+                class="px-4 py-2 rounded bg-indigo-500 hover:bg-indigo-600"
+              >
+                Send Message
+              </button>
+              <p id="formStatus" class="text-sm text-slate-300"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <footer class="max-w-6xl mx-auto px-6 py-8 text-center text-slate-400">
+        © <span id="year"></span> ansarbinkunhimarakar@gmail.com
+      </footer>
+    </main>
+  </body>
+</html>
+v
